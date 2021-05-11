@@ -1,0 +1,21 @@
+ {% extends 'base.html' %}
+ {% load static %} 
+{% load crispy_forms_tags %}
+{% block title %} Login Page  {% endblock %}
+
+
+{% block body_block %}
+<link rel="stylesheet" href="{% static 'stylelogin.css'%}" type="text/css">
+<div class="loginbox">
+  <img src="{% static 'images/avatar.png' %}">
+  <h2>Login Here</h2>
+<form method="post">
+  {{ form|crispy }}
+  {% csrf_token %}
+  <button type="submit" class="btn btn-primary btn-sm" >Login</button>
+
+</form>
+</div>
+
+
+{% endblock %}
